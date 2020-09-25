@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Um conversor de bases.</h3>
+
+        <input type="text" id="x" value="Some text...">
+        
+        <button onclick="conversor()">Converter</button>
+
+        <p id="binario"></p>
+        <p id="hexa"></p>
+        <p id="octal"></p>
+
+        <script>
+            function formatarBinario(binario){
+                let binarioLista = binario.toString(2).split("").reverse();
+                let binarioFormatado = "";
+                let contador = 0;
+                for (var i = 0; i < binarioLista.length; i++) {
+                    binarioFormatado += binarioLista[i];
+                    contador += 1;
+                    if(contador == 4){
+                        binarioFormatado += " ";
+                        contador = 0;
+                    }
+                }
+                return binarioFormatado.split("").reverse().join("");
+            }
+            function conversor() {
+                const x = parseInt(document.getElementById("x").value);
+
+                document.getElementById("binario").innerHTML = formatarBinario(x.toString(2));
+                document.getElementById("hexa").innerHTML = x.toString(16);
+                document.getElementById("octal").innerHTML = x.toString(8);
+            }
+        </script>
+    </body>
+</html>
