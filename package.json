@@ -2,13 +2,14 @@
   "name": "aprendendo-javascript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "requisicoes.js",
   "dependencies": {
     "axios": "^0.20.0",
     "lodash": "^4.17.20"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -20,8 +20,10 @@ console.log('module.exports === this:-------' + (module.exports === this));
 console.log('module.exports === exports:----' + (module.exports === exports));
 console.log('this === exports:--------------' + (this === exports));
 
+function teste() {
+    return true;
+}
 exports = teste()
-
 
 console.log('-------- entidades --------');
 console.log(this);
@@ -29,9 +31,6 @@ console.log(exports);
 console.log(module.exports);
 console.log('- - - - - - - - - - - - - - ');
 
-function teste() {
-    return true;
-}
 
 
 // se nao tiver isso, exporta tudo automaticamente
