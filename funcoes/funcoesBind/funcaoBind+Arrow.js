@@ -35,6 +35,7 @@ function PessoaSelf() {
 function PessoaArrow() {
 	this.idade = 0;
 
+	// o this dele é o de onde ele foi escrito
 	setInterval(() => {
 		this.idade++;
 		console.log(this.idade + " arrow");
