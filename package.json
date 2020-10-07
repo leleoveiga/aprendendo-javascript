@@ -1,13 +1,15 @@
 {
   "name": "aprendendo-javascript",
   "version": "1.0.0",
-  "description": "",
-  "main": "requisicoes.js",
+  "main": "projetoExpress/src/server.js",
   "dependencies": {
     "axios": "^0.20.0",
+    "express": "^4.17.1",
     "lodash": "^4.17.20"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/leleoveiga/aprendendo-javascript/issues"
   },
-  "homepage": "https://github.com/leleoveiga/aprendendo-javascript#readme"
+  "homepage": "https://github.com/leleoveiga/aprendendo-javascript#readme",
+  "description": ""
 }
