@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudando html</title>
-    <style>
-        #conteudo {
-            padding: 30px 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        Exercícios HTML
-    </header>
-    <nav>
-        <a href atributoPersonalizado="exercicios/teste.html">00 Teste</a> |
-        <a href atributoPersonalizado="exercicios/texto1.html">01 Texto 1</a> |
-        <a href atributoPersonalizado="exercicios/texto2.html">02 Texto 2</a> |
-        <a href atributoPersonalizado="exercicios/listas.html">03 Listas</a> 
-    </nav>
-    <section id="conteudo"></section>
-    <footer>
-        <br>
-        Curso de web
-    </footer>
-    <script>
-        document.querySelectorAll('a').forEach(link => {
-            const conteudo = document.getElementById('conteudo')
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Estudando html</title>
+		<style>
+			#conteudo {
+				padding: 30px 20px;
+			}
+		</style>
+		<link rel="stylesheet" href="./scrollBarDark.css" />
+	</head>
+	<body>
+		<h1>Exercícios HTML</h1>
+		<nav id="links">
+			<a href exercicios="exercicios/teste.html">00 Teste</a>
+			<a href exercicios="exercicios/texto1.html">01 Texto 1</a>
+			<a href exercicios="exercicios/texto2.html">02 Texto 2</a>
+			<a href exercicios="exercicios/listas.html">03 Listas</a>
+		</nav>
+		<section id="conteudo"></section>
+		<footer>
+			<br />
+			Curso de web
+		</footer>
+		<script>
+			document.querySelectorAll("a").forEach((link) => {
+				const conteudo = document.getElementById("conteudo");
 
-            link.onclick = (e) => {
-                e.preventDefault()
-                console.log('Clicou no link')
-                fetch(link.getAttribute('atributoPersonalizado')).then(resp => resp.text()).then(html => conteudo.innerHTML = html)
-            }
-        })
-    </script>
-</body>
+				link.onclick = (e) => {
+					e.preventDefault();
+					console.log("Clicou no link");
+					fetch(link.getAttribute("exercicios"))
+						.then((resp) => resp.text())
+						.then((html) => (conteudo.innerHTML = html));
+				};
+			});
+		</script>
+	</body>
 </html>
