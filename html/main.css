@@ -33,7 +33,7 @@ body {
 	/* text-shadow: -2px 1px black, 2px -1px black; */
 	color: rgb(238, 238, 238);
 	text-shadow: 0 0 0.1em black, 0 0 0.1em black, 0 0 0.1em black;
-	font-size: 270%;
+	font-size: 250%;
 	padding: 10px 15px;
 }
 
@@ -50,14 +50,15 @@ body {
 #links a#b2:visited,
 #links a#b3:visited,
 #links a#b4:visited {
-	color: #c7c7c7;
+	color: #d8d8d8;
 }
 
 #links a#b1:active,
 #links a#b2:active,
 #links a#b3:active,
 #links a#b4:active {
-	color: #f0f0f0;
+	color: #1f1f1f;
+	background-image: black;
 }
 
 #links a#b1,
@@ -76,6 +77,7 @@ body {
 #links a#b2,
 #links a#b3,
 #links a#b4 {
+	font: 700 110%/1 "Nunito", sans-serif;
 	text-decoration: none; /* retira o sublinhado */
 	margin: 5px; /* espaçamento entre cada um */
 	padding: 15px 30px; /* altura e largura do botao */
