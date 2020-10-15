@@ -39,32 +39,20 @@ body {
 
 /* nav bar */
 
-#links {
+.navCenter {
 	display: flex;
-	justify-content: center;
+	flex-direction: row; /* definição do eixo */
+	justify-content: center; /* eixo primario*/
+	/* align-items: flex-end; eixo secundario */
 	padding: 20px 10px;
 	font: 400 110%/1 "Nunito", sans-serif;
 }
 
-#links a#b1:visited,
-#links a#b2:visited,
-#links a#b3:visited,
-#links a#b4:visited {
-	color: #d8d8d8;
+.styleButton:active {
+	color: #1f1f1f !important;
 }
 
-#links a#b1:active,
-#links a#b2:active,
-#links a#b3:active,
-#links a#b4:active {
-	color: #1f1f1f;
-	background-image: black;
-}
-
-#links a#b1,
-#links a#b2,
-#links a#b3,
-#links a#b4 {
+.backgroundButton {
 	background-image: linear-gradient(
 		125deg,
 		#ff004c 0%,
@@ -73,10 +61,11 @@ body {
 	);
 }
 
-#links a#b1,
-#links a#b2,
-#links a#b3,
-#links a#b4 {
+.styleButton:visited {
+	color: #c2c2c2;
+}
+
+.styleButton {
 	font: 700 110%/1 "Nunito", sans-serif;
 	text-decoration: none; /* retira o sublinhado */
 	margin: 5px; /* espaçamento entre cada um */
@@ -91,12 +80,9 @@ body {
 	display: block; /* n sei */
 }
 
-#links a#b1:hover,
-#links a#b2:hover,
-#links a#b3:hover,
-#links a#b4:hover {
-	color: #fff;
+.styleButton:hover {
 	/* transition-duration: 2s; */
+	color: #fff;
 	transition-delay: 10ms;
 	background-position: right; /* change the direction of the change here */
 }
