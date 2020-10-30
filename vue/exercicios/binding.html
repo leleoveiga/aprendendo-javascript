@@ -11,8 +11,8 @@
 			<p>{{ link }}</p>
 			<p><a v-bind:href="link">Piuripai</a></p>
 			<p>
-				<input type="text" v-model="texto" /><br />
-				<span>{{ nome }}</span>
+				<input type="text" v-model="texto"><br>
+				<span>{{ texto }}</span>
 			</p>
 		</div>
 		<script>
@@ -20,8 +20,13 @@
 				el: "#app",
 				data: {
 					link: "https://www.youtube.com/user/PewDiePie",
-					nome: "joao",
+					texto: "AQUI É XANDAO",
 				},
+				watch: {
+					texto(novoValor) {
+						this.texto = novoValor.toUpperCase()
+					}
+				}
 			});
 		</script>
 	</body>
