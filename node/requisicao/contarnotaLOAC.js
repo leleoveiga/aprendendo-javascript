@@ -5,7 +5,6 @@ const fs = require("fs");
 
 filtraNotas = (notas, idAlvo) => {
 	let listaSplit = notas.split("\n");
-	let mapaNotas = new Map();
 	let nota = listaSplit[0].split(" ");
 	let i = 0;
 	while (nota[0] != idAlvo) {
