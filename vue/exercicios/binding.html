@@ -9,8 +9,10 @@
 	<body class="exercicio">
 		<div id="app">
 			<p>{{ link }}</p>
+			<!-- linka com alguma coisa declarada no vue instance, mas apenas em 1 direção -->
 			<p><a v-bind:href="link">Piuripai</a></p>
 			<p>
+				<!-- oq alterar num, vai alterar noutro -->
 				<input type="text" v-model="texto" /><br />
 				<span>{{ texto }}</span>
 			</p>
@@ -20,9 +22,10 @@
 				el: "#app",
 				data: {
 					link: "https://www.youtube.com/user/PewDiePie",
-					texto: "AQUI É XANDAO",
+					texto: "CAPSLOCK LIGADO",
 				},
 				watch: {
+					// vai automaticamente ver o q está acontecendo com a variável 'texto'
 					texto(novoValor) {
 						this.texto = novoValor.toUpperCase();
 					},
