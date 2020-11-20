@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Componente</title>
-    <link rel="stylesheet" href="/css/estilo.css">
-    <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Componente</title>
+		<link rel="stylesheet" href="css/estilo.css" />
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body class="exercicio">
+		<div id="app">
+			<saudacao nome="lel"></saudacao>
+			<saudacao nome="juau"></saudacao>
+			<contador></contador>
+			<contador></contador>
+		</div>
+		<script>
+			Vue.component("saudacao", {
+				props: ["nome"],
+                data: function() {
+                    return {
+                        bomdia: "bom dia"
+                    }
+                },
+				template: `
+			             <div> {{ bomdia }} {{ nome }} </div>
+			         `,
+			});
+			Vue.component("contador", {
+                data: function() {
+                    return {
+                        x: 0,
+					    y: 0,
+					    contador: 0,
+                    }
+                },
+                methods: {
+					add() {
+						this.contador++;
+					},
+					sub() {
+						this.contador--;
+					},
+					atualizaPosicao(e) {
+						this.x = e.clientX;
+						this.y = e.clientY;
+					},
+					stop(e) {
+						e.stopPropagation();
+					},
+					alerta() {
+						alert("dá enter n bixo");
+					},
+                },
+        		template: `
+                <div class="divBody" @mousemove="atualizaPosicao">
+                <span>{{ contador }}
+				<button v-on:click="add">+1</button>
+				<button v-on:click="sub">-1</button>
+			    </span>
+			    <p> Coordenadas: {{ x }} {{ y }}</p>
+			    <div @mousemove="stop">Aqui para</div>
+                </br>
+			    <input type="text" @keyup.enter="alerta" />
+                </br>
+                </div>
+			    `,
+			});
 
-    <script>
-        // ...
-    </script>
-</body>
+			new Vue({
+				el: "#app",
+			});
+		</script>
 </html>
+	</body>
