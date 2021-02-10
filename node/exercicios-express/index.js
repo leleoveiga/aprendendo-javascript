@@ -1,8 +1,30 @@
 const express = require("express");
-const salve = require("./salve");
 const app = express();
+const parser = require("body-parser");
+
+const salve = require("./salve");
+const usuarioAPI = require("./api/usuario");
 
 app.use(salve("leo"));
+app.post("/usuario", usuarioAPI.salvar);
+app.get("/usuario", usuarioAPI.obter);
+
+// app.use(parser.text());
+app.use(parser.json());
+
+app.get("/clientes/relatorio", (req, res) => {
+	res.send(
+		`Cliente relatório: completo = ${req.query.completo} & ano = ${req.query.ano}`
+	);
+});
+
+app.post("/corpo", (req, res) => {
+	res.send(req.body);
+});
+
+app.get("/clientes/:id", (req, res) => {
+	res.send(`Cliente ${req.params.id} selecionado`);
+});
 
 app.get("/home", (req, res, next) => {
 	// res.send("isto eh uma response")
