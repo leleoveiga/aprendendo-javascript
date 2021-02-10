@@ -4,6 +4,10 @@ const parser = require("body-parser");
 
 const salve = require("./salve");
 const usuarioAPI = require("./api/usuario");
+// require("./api/produto")(app, "com param!");
+//ou
+const produtoAPI = require("./api/produto");
+produtoAPI(app, "com param!");
 
 app.use(salve("leo"));
 app.post("/usuario", usuarioAPI.salvar);
